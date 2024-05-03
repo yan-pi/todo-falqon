@@ -15,7 +15,7 @@ export function AuthPage() {
     if (password === 'falqon') { // Substitua 'senhaCorreta' pela senha correta
       dispatch(setPassword(password));
       window.location.href = '/todo';
-      console.log("Senha correta")
+      console.log("User authenticated successfully")
     } else {
       alert('Senha incorreta');
     }
