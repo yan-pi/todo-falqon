@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
+import PrivateRoute from "./components/shared/PrivateRoute";
+import { TodoPage } from "./routes/TodoPage";
 
 function App() {
   return (
     <>
-      <div className="flex justify-center items-center">
-        <h1 className="font-bold m-4 text-2xl">Falqon Todo</h1>
-      </div>
       <Outlet />
+      <PrivateRoute path="/todo" element={<TodoPage />} />
     </>
   );
 }
