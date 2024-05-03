@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTask } from "../store/taskReducer";
+import { deleteTask } from "../store/taskSlice";
 import { DeleteIcon } from "./shared/DeleteIcon";
 
 interface TaskDeleteButtonProps {
@@ -14,7 +14,11 @@ const TaskDeleteButton: React.FC<TaskDeleteButtonProps> = ({ taskId }) => {
     dispatch(deleteTask(taskId));
   };
 
-  return <button onClick={handleDelete}><DeleteIcon/></button>;
+  return (
+    <button onClick={handleDelete}>
+      <DeleteIcon />
+    </button>
+  );
 };
 
 export default TaskDeleteButton;

@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import taskReducer from "./taskReducer";
-import userReducer from "./userReducer";
+import taskReducer from "./taskSlice";
+import userReducer from "./userSlice";
 
 interface UserState {
   password: string;

@@ -1,23 +1,24 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setPassword } from '../store/userReducer';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setPassword } from "../store/userSlice";
 
 export function AuthPage() {
-  const [password, setPasswordValue] = useState('');
+  const [password, setPasswordValue] = useState("");
   const dispatch = useDispatch();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Evitar o comportamento padrão do formulário
 
-    if (password === 'falqon') { // Substitua 'senhaCorreta' pela senha correta
+    if (password === "falqon") {
+      // Substitua 'senhaCorreta' pela senha correta
       dispatch(setPassword(password));
-      window.location.href = '/todo';
-      console.log("User authenticated successfully")
+      window.location.href = "/todo";
+      console.log("User authenticated successfully");
     } else {
-      alert('Senha incorreta');
+      alert("Senha incorreta");
     }
   };
 
@@ -39,7 +40,13 @@ export function AuthPage() {
           </div>
           <div>
             <Label htmlFor="password">Password</Label>
-            <Input id="password" required type="password" value={password} onChange={(e) => setPasswordValue(e.target.value)}/>
+            <Input
+              id="password"
+              required
+              type="password"
+              value={password}
+              onChange={(e) => setPasswordValue(e.target.value)}
+            />
           </div>
           <Button className="w-full" type="submit">
             Sign in
