@@ -10,10 +10,9 @@ export function AuthPage() {
   const dispatch = useDispatch();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Evitar o comportamento padrão do formulário
+    e.preventDefault(); 
 
     if (password === "falqon") {
-      // Substitua 'senhaCorreta' pela senha correta
       dispatch(setPassword(password));
       window.location.href = "/todo";
       console.log("User authenticated successfully");
