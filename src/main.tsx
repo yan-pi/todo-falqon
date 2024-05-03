@@ -1,29 +1,34 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import './index.css'
-import AuthPage from './routes/auth-page.tsx';
+import "./index.css";
+import { AuthPage } from "./routes/AuthPage.tsx";
+import { TodoPage } from "./routes/TodoPage.tsx";
+import store from "./store/store.ts";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthPage />,
+    element: <App />,
     children: [
       {
         path: "/",
-        //element: <Home />,
+        element: <AuthPage />,
       },
       {
-        path: "/repos/:username",
-        //element: <Repos />,
+        path: "/todo",
+        element: <TodoPage />,
       },
     ],
   },
 ]);
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </React.StrictMode>
+);
