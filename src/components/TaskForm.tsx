@@ -18,7 +18,7 @@ const TaskForm: React.FC = () => {
 
   return (
     <div className="flex items-center">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex  gap-2">
         <Input
           type="text"
           placeholder="Task Title"
@@ -31,7 +31,7 @@ const TaskForm: React.FC = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <Button size="sm" type="submit">
+        <Button size="sm" className="text font-bold" type="submit">
           Add Task
         </Button>
       </form>

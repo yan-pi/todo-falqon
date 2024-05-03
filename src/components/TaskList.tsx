@@ -15,19 +15,18 @@ const TaskList: React.FC = () => {
   const tasks = useSelector((state: RootState) => state.task.tasks);
 
   return (
-    <div>
+    <div className="flex gap-3 flex-col">
       {tasks.map((task: Task) => (
        <Card key={task.id} >
         <CardHeader>
           <CardTitle>{task.title}</CardTitle>
           <CardDescription>
             {task.description}
-            {task.id.split(".")[1].substring(0, 3)}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex justify-between items-center">
-            <span className="text-gray-500 dark:text-gray-400">#1234</span>
+            <span className="text-gray-500 dark:text-gray-400">#{task.id.split(".")[1].substring(0, 3)}</span>
             <TaskDeleteButton taskId={task.id} />
           </div>
         </CardContent>
