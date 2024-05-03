@@ -8,6 +8,7 @@ import { AuthPage } from "./routes/AuthPage.tsx";
 import { TodoPage } from "./routes/TodoPage.tsx";
 import store from "./store/store.ts";
 import { Provider } from "react-redux";
+import PrivateRoute from "./components/shared/PrivateRoute.tsx";
 // import PrivateRoute from "./components/shared/PrivateRoute.tsx";
 
 const router = createBrowserRouter([
@@ -29,8 +30,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
-      {/* <PrivateRoute path="/todo" element={<TodoPage />} /> */}
+      <RouterProvider router={router}>
+        {/* <PrivateRoute path="/todo" element={<TodoPage />} /> */}
+      </RouterProvider> 
     </Provider>
   </React.StrictMode>
 );
