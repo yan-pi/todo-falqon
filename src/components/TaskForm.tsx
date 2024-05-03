@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../store/taskReducer";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 const TaskForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,21 +17,23 @@ const TaskForm: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="flex items-center">
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           placeholder="Task Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <input
+        <Input
           type="text"
           placeholder="Task Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button type="submit">Add Task</button>
+        <Button size="sm" type="submit">
+          Add Task
+        </Button>
       </form>
     </div>
   );
