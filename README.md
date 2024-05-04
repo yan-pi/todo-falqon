@@ -61,13 +61,13 @@ Para testar o projeto, siga estas etapas:
 3. Rode o comando ``yarn dev`` ou ``npm run dev``
 
 ## Credenciais de Acesso
-Para acessar o aplicativo, utilize as seguintes credenciais:
+Para acessar a aplicação, utilize as seguintes credenciais:
 
 ```
 Usuário: User
 Senha: falqon
-Certifique-se de utilizar essas credenciais ao acessar o aplicativo para garantir uma experiência de uso adequada.
 ```
+Certifique-se de utilizar essas credenciais ao acessar o aplicativo para garantir uma experiência de uso adequada.
 
 ## Considerações Finais
 Entendo que a proposta seja para full-stack, no entanto, foi solicitado um desafio de front-end. Não estou certo se era necessário desenvolver um backend para este projeto, mas tentei entregar todas as funcionalidades dentro do tempo estipulado. Poderia ter desenvolvido o backend, mas optei por não comprometer meu tempo durante a avaliação.
